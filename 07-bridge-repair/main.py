@@ -1,7 +1,6 @@
 # Attempting brute force
 
-
-# Equations represent as list of tuple, where for each tuple,
+# Equations represented as list of tuple, where for each tuple,
 # t0 is the test value and t1 is the numbers list.
 def parse_equations(equations_file):
   equations = []
@@ -40,6 +39,11 @@ def start_operands():
 # Can likely optimize by short circuiting running calcs that get too large.
 # With only + and * a large number can never shrink back to a small one,
 # so can abandon certain calcs early.
+
+# When running calc exceeds target_val, exit early and return None.
+# Function sig becomes:
+# def evaluate_operands(numbers, operands, target_val):
+
 def evaluate_operands(numbers, operands):
   nchoices = num_choices(numbers)
   current_calc = numbers[0]
@@ -84,4 +88,3 @@ for eq in equations:
     sum += tval
 
 print(sum)
-# 5540634308362
